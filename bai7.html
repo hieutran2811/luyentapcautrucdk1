@@ -41,13 +41,10 @@
     let num2;
     if (num1 <= 200){
         num2 = num1 * 700;
-        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Giỏi</strong>";
     }else if (num2 > 200){
         num2 = num1 * 650;
-        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Khá</strong>";
     }else if (num1 > 300){
         num2 = num1 * 600;
-        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Trung bình</strong>";
     }
     num2 = Math.round(num2 * 100) / 100;
     document.getElementById("num2").innerHTML = num2;

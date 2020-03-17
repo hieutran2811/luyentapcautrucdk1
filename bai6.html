@@ -44,8 +44,6 @@
 <script>
     let num1 = parseFloat(prompt("Giá tiền 1 sản phẩm"));
     let num2 = parseInt(prompt("Số lượng sản phẩm"));
-    //let num3 = parseFloat(prompt("Số thứ 3"));
-    //let num4 = parseFloat(prompt("Số thứ 3"));
     let num3 = num1 * num2;
     let num4 = (num1 * num2) * 0.1;
 
@@ -57,13 +55,10 @@
 
     if (num2 > 0){
         num4 = num3 * 0.1;
-        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Giỏi</strong>";
     }else if (num2 > 20){
         num4 = num3 * 0.15;
-        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Khá</strong>";
     }else if (num2 > 50){
         num4 = num3 * 0.2;
-        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Trung bình</strong>";
     }
     num4 = Math.round(num4 * 100) / 100;
     document.getElementById("num4").innerHTML = num4;
