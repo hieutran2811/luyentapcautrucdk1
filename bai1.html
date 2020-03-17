@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra chia hết</title>
+</head>
+<body>
+<p style="font-size: 25px">Số a có chia hết cho số b không? Thử xem!</p>
+<hr/>
+<label>
+    Số a:
+    <input id="num1" type="text"/>
+</label><br/><br/>
+<label>
+    Số b:
+    <input id="num2" type="text"/><br/>
+</label><br/>
+<button onclick="Tinh()">Tính toán</button><br/>
+<p><strong>Kết quả:</strong></p>
+<p id="result"></p>
+<script>
+    function Tinh() {
+        let num1 = parseInt(document.getElementById("num1").value);
+        let num2 = parseInt(document.getElementById("num2").value);
+
+        if (num1 % num2 === 0){
+            document.getElementById("result").innerHTML = "Số a <strong>chia hết</strong> cho số b."
+        }else{
+            document.getElementById("result").innerHTML = "Số a <strong>không chia hết</strong> cho số b."
+        }
+    }
+</script>
+</body>
+</html>

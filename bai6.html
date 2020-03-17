@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền hoa hồng</title>
+</head>
+<body>
+<p>Chi tiết:</p>
+<table border="1" style="border-collapse: collapse; width: 500px">
+    <tr>
+        <th>Giá tiền (Triệu đồng)</th>
+        <th>Số lượng SP (cái)</th>
+        <th>Doanh thu (Triệu đồng)</th>
+        <th>Hoa hồng (Triệu đồng)</th>
+    </tr>
+    <tr>
+        <th id="num1"></th>
+        <th id="num2"></th>
+        <th id="num3"></th>
+        <th id="num4"></th>
+    </tr>
+</table><br/>
+<hr/>
+<p>Chú thích:</p>
+<table border="1" style="border-collapse: collapse; width: 500px">
+    <tr>
+        <th>Số lượng SP (cái)</th>
+        <th>Hoa hồng (%)</th>
+    </tr>
+    <tr>
+        <th>< 20sp</th>
+        <th>10%</th>
+    </tr>
+    <tr>
+        <th>> 20sp</th>
+        <th>15%</th>
+    </tr>
+    <tr>
+        <th>> 50sp</th>
+        <th>20%</th>
+    </tr>
+</table>
+
+<script>
+    let num1 = parseFloat(prompt("Giá tiền 1 sản phẩm"));
+    let num2 = parseInt(prompt("Số lượng sản phẩm"));
+    //let num3 = parseFloat(prompt("Số thứ 3"));
+    //let num4 = parseFloat(prompt("Số thứ 3"));
+    let num3 = num1 * num2;
+    let num4 = (num1 * num2) * 0.1;
+
+    num3 = Math.round(num3 * 100) / 100;
+
+    document.getElementById("num1").innerHTML = num1;
+    document.getElementById("num2").innerHTML = num2;
+    document.getElementById("num3").innerHTML = num3;
+
+    if (num2 > 0){
+        num4 = num3 * 0.1;
+        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Giỏi</strong>";
+    }else if (num2 > 20){
+        num4 = num3 * 0.15;
+        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Khá</strong>";
+    }else if (num2 > 50){
+        num4 = num3 * 0.2;
+        //document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Trung bình</strong>";
+    }
+    num4 = Math.round(num4 * 100) / 100;
+    document.getElementById("num4").innerHTML = num4;
+</script>
+</body>
+</html>>

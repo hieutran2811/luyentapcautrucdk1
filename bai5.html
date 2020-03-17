@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp loại học lực</title>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse; width: 500px">
+    <tr>
+        <th>Điểm kiểm tra (H.số 1)</th>
+        <th>Điểm giữa kỳ (H.số 2)</th>
+        <th>Điểm cuối kỳ (H.số 3)</th>
+    </tr>
+    <tr>
+        <th id="diem1"></th>
+        <th id="diem2"></th>
+        <th id="diem3"></th>
+    </tr>
+</table>
+<p id="result1"></p>
+<p id="result2"></p>
+<script>
+    let diem1 = parseFloat(prompt("Số thứ 1"));
+    let diem2 = parseFloat(prompt("Số thứ 2"));
+    let diem3 = parseFloat(prompt("Số thứ 3"));
+    let DTB = (diem1 + diem2 * 2 + diem3 * 3) / 6;
+
+    DTB = Math.round(DTB*100)/100;
+
+    document.getElementById("diem1").innerHTML = diem1;
+    document.getElementById("diem2").innerHTML = diem2;
+    document.getElementById("diem3").innerHTML = diem3;
+    document.getElementById("result1").innerHTML = "Điểm trung bình: " + "<strong>" + DTB + "</strong>";
+
+    if (DTB > 8.5){
+        document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Giỏi</strong>";
+    }else if (DTB > 7){
+        document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Khá</strong>";
+    }else if (DTB > 5){
+        document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Trung bình</strong>";
+    }else {
+        document.getElementById("result2").innerHTML = "Xếp loại: " + "<strong style='color: red'>Kém</strong>";
+    }
+</script>
+</body>
+</html>
